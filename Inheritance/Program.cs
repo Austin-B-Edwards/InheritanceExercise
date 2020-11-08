@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+
+using System;
 
 namespace Inheritance
 {
@@ -6,34 +8,36 @@ namespace Inheritance
     {
         static void Main(string[] args)
         {
-            // TODO Be sure to follow best practice when creating your classes
-
-            // Create a class Animal
-            // give this class 4 members that all Animals have in common
-
-
-            // Create a class Bird
-            // give this class 4 members that are specific to Bird
-            // Set this class to inherit from your Animal Class
-
-            // Create a class Reptile
-            // give this class 4 members that are specific to Reptile
-            // Set this class to inherit from your Animal Class
 
 
 
+            var myBird = new Bird();
+            {
+                myBird.Legs = 2;
+                myBird.Size = 2;
+                myBird.HasFeathers = true;
+            }
 
-            /*Create an object of your Bird class
-             *  give values to your members using the object of your Bird class
-             *  
-             * Creatively display the class member values 
-             */
+            var lizard = new Reptile();
+            {
+                lizard.HasScales = true;
+                lizard.EyeShape = "Football";
+                lizard.ColdBlooded = true;
+                lizard.Length = 25;
+            }
 
-            /*Create an object of your Reptile class
-             *  give values to your members using the object of your Bird class
-             *  
-             * Creatively display the class member values 
-             */
+            var myAnimals = new Animal[] { myBird, lizard };
+
+            foreach (var animal in myAnimals)
+            {
+                Console.WriteLine($"Has a Tail, {animal.HasTail}");
+                Console.WriteLine($"Legs, {animal.Legs}");
+                Console.WriteLine($"Color, {animal.Color}");
+                Console.WriteLine($"");
+
+            }
+
+            
         }
     }
 }
